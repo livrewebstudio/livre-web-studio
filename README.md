@@ -1,4 +1,4 @@
-# 🌐 Livre Web Studio
+# 🌐 Livre Web Studium
 
 Website oficial da **Livre Web Studio** — criação de sites modernos, rápidos e focados em conversão.
 

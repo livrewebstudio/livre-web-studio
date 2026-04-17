@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiVRe Web Studium | Sites Estupendos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="lvr-favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="container">
+            <img src="lvr-logo-transparent.png" alt="LiVRe Web Studium" class="logo">
+            <div class="lang-switcher">
+                <button onclick="switchLang('pt')" class="active">PT</button>
+                <button onclick="switchLang('it')">IT</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="lang-pt">Sites que Voam, <br><span>Resultados que Ficam.</span></h1>
+                    <h1 class="lang-it" style="display:none;">Siti che Volano, <br><span>Risultati che Restano.</span></h1>
+                    
+                    <p class="lang-pt">Design estupendo, performance absoluta e a liberdade que sua marca merece.</p>
+                    <p class="lang-it" style="display:none;">Design stupendo, performance assoluta e la libertà che il tuo marchio merita.</p>
+                    
+                    <a href="https://wa.me/5511971640775" class="btn-primary">
+                        <span class="lang-pt">Solicitar Orçamento</span>
+                        <span class="lang-it" style="display:none;">Richiedi un Preventivo</span>
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <img src="lvr-favicon.png" alt="Asa LiVRe" class="floating">
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="card">
+                    <h3 class="lang-pt">Velocidade</h3>
+                    <h3 class="lang-it" style="display:none;">Velocità</h3>
+                    <p class="lang-pt">Código otimizado para carregar em milissegundos.</p>
+                    <p class="lang-it" style="display:none;">Codice ottimizzato per caricarsi in millisecondi.</p>
+                </div>
+                <div class="card">
+                    <h3 class="lang-pt">Mobile First</h3>
+                    <h3 class="lang-it" style="display:none;">Mobile First</h3>
+                    <p class="lang-pt">Navegação perfeita em qualquer smartphone.</p>
+                    <p class="lang-it" style="display:none;">Navigazione perfetta su qualsiasi smartphone.</p>
+                </div>
+                <div class="card">
+                    <h3 class="lang-pt">Global</h3>
+                    <h3 class="lang-it" style="display:none;">Globale</h3>
+                    <p class="lang-pt">Projetos prontos para o Brasil e Europa.</p>
+                    <p class="lang-it" style="display:none;">Progetti pronti per il Brasile e l'Europa.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dark-footer">
+        <div class="container">
+            <img src="lvr-logo-transparent.png" alt="LiVRe" class="logo-footer">
+            <div class="contacts">
+                <p>🇧🇷 +55 11 97164-0775</p>
+                <p>🇮🇹 +39 350 035 9910</p>
+                <p>@livrewebstudio</p>
+            </div>
+            <p class="copy">&copy; 2024 LiVRe Web Studium. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLang(lang) {
+            const pt = document.querySelectorAll('.lang-pt');
+            const it = document.querySelectorAll('.lang-it');
+            const buttons = document.querySelectorAll('.lang-switcher button');
+            
+            if(lang === 'pt') {
+                pt.forEach(el => el.style.display = 'block');
+                it.forEach(el => el.style.display = 'none');
+                buttons[0].classList.add('active');
+                buttons[1].classList.remove('active');
+            } else {
+                pt.forEach(el => el.style.display = 'none');
+                it.forEach(el => el.style.display = 'block');
+                buttons[0].classList.remove('active');
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LiVRe Web Studium — Liberdade Digital</title>
+  <meta name="description" content="LiVRe Web Studium — Design, desenvolvimento web e apps com liberdade criativa. Landing pages, sites e aplicativos sob medida." />
+  <link rel="icon" href="assets/lvr-favicon.png" type="image/png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════ HEADER / NAV -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <div class="nav__logo">
+        <img src="assets/lvr-logo-transparent.png" alt="LiVRe Web Studium logo" class="nav__logo-img" />
+        <span class="nav__logo-sub">— Web Studium —</span>
+      </div>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#hero" class="nav__link" data-pt="Início" data-en="Home" data-it="Home">Início</a></li>
+        <li><a href="#servicos" class="nav__link" data-pt="Serviços" data-en="Services" data-it="Servizi">Serviços</a></li>
+        <li><a href="#portfolio" class="nav__link" data-pt="Portfólio" data-en="Portfolio" data-it="Portfolio">Portfólio</a></li>
+        <li><a href="#sobre" class="nav__link" data-pt="Quem Somos" data-en="About" data-it="Chi Siamo">Quem Somos</a></li>
+        <li><a href="#contato" class="nav__link" data-pt="Contato" data-en="Contact" data-it="Contatto">Contato</a></li>
+      </ul>
+
+      <div class="nav__right">
+        <!-- Language switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn active" data-lang="pt" title="Português">
+            <span class="flag">🇧🇷</span>
+          </button>
+          <button class="lang-btn" data-lang="en" title="English">
+            <span class="flag">🇬🇧</span>
+          </button>
+          <button class="lang-btn" data-lang="it" title="Italiano">
+            <span class="flag">🇮🇹</span>
+          </button>
+        </div>
+
+        <!-- Social icons -->
+        <div class="nav__social">
+          <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="social-icon social-icon--wa" title="WhatsApp Brasil">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="https://wa.me/393500359910" target="_blank" rel="noopener" class="social-icon social-icon--wa" title="WhatsApp Italia">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span class="flag-badge">🇮🇹</span>
+          </a>
+          <a href="mailto:livrewebservices@gmail.com" class="social-icon social-icon--mail" title="E-mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </a>
+          <a href="https://instagram.com/livrewebstudium" target="_blank" rel="noopener" class="social-icon social-icon--ig" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="nav__toggle" id="navToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <div class="hero__orb hero__orb--1"></div>
+      <div class="hero__orb hero__orb--2"></div>
+      <div class="hero__orb hero__orb--3"></div>
+      <div class="hero__grid"></div>
+    </div>
+    <div class="container hero__content">
+      <div class="hero__logo-wrap">
+        <img src="assets/lvr-logo-transparent.png" alt="LiVRe" class="hero__logo" />
+        <p class="hero__logo-sub">— Web Studium —</p>
+      </div>
+      <h1 class="hero__tagline">
+        <span class="hero__tagline-line" data-pt="Asas para o seu" data-en="Wings for your" data-it="Ali per il vostro">Asas para o seu</span><br/>
+        <em data-pt="projeto digital." data-en="digital project." data-it="progetto digitale.">projeto digital.</em>
+      </h1>
+      <p class="hero__sub" data-pt="Design com alma. Código com propósito. Liberdade em cada pixel." data-en="Soulful design. Purposeful code. Freedom in every pixel." data-it="Design con anima. Codice con scopo. Libertà in ogni pixel.">Design com alma. Código com propósito. Liberdade em cada pixel.</p>
+      <div class="hero__cta">
+        <a href="#contato" class="btn btn--primary" data-pt="Inicie seu projeto" data-en="Start your project" data-it="Inizia il progetto">Inicie seu projeto</a>
+        <a href="#portfolio" class="btn btn--ghost" data-pt="Ver portfólio" data-en="See portfolio" data-it="Vedi portfolio">Ver portfólio</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SERVIÇOS -->
+  <section class="section services" id="servicos">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label" data-pt="O que fazemos" data-en="What we do" data-it="Cosa facciamo">O que fazemos</span>
+        <h2 class="section__title" data-pt="Serviços" data-en="Services" data-it="Servizi">Serviços</h2>
+      </div>
+      <div class="services__grid">
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M8 36L16 28L22 34L32 20L40 32" stroke="url(#g1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="4" y="6" width="40" height="36" rx="4" stroke="url(#g1)" stroke-width="2"/>
+              <defs><linearGradient id="g1" x1="4" y1="6" x2="44" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#00b4ff"/><stop offset="1" stop-color="#a100ff"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-pt="Landing Pages" data-en="Landing Pages" data-it="Landing Pages">Landing Pages</h3>
+          <p class="service-card__text" data-pt="Páginas de conversão que capturam atenção e transformam visitantes em clientes. Design estratégico e persuasivo." data-en="Conversion pages that capture attention and turn visitors into customers. Strategic, persuasive design." data-it="Pagine di conversione che catturano l'attenzione e trasformano i visitatori in clienti.">Páginas de conversão que capturam atenção e transformam visitantes em clientes. Design estratégico e persuasivo.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="4" y="8" width="28" height="32" rx="3" stroke="url(#g2)" stroke-width="2"/>
+              <rect x="16" y="14" width="28" height="28" rx="3" stroke="url(#g2)" stroke-width="2"/>
+              <defs><linearGradient id="g2" x1="4" y1="8" x2="44" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#00b4ff"/><stop offset="1" stop-color="#a100ff"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-pt="Websites" data-en="Websites" data-it="Siti Web">Websites</h3>
+          <p class="service-card__text" data-pt="Sites institucionais, portfólios e lojas online com identidade visual forte, responsivos e otimizados." data-en="Institutional sites, portfolios and online stores with strong visual identity, responsive and optimized." data-it="Siti istituzionali, portfolio e negozi online con forte identità visiva, responsive e ottimizzati.">Sites institucionais, portfólios e lojas online com identidade visual forte, responsivos e otimizados.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="14" y="4" width="20" height="40" rx="4" stroke="url(#g3)" stroke-width="2"/>
+              <circle cx="24" cy="37" r="2" fill="url(#g3)"/>
+              <path d="M19 9h10" stroke="url(#g3)" stroke-width="2" stroke-linecap="round"/>
+              <defs><linearGradient id="g3" x1="14" y1="4" x2="34" y2="44" gradientUnits="userSpaceOnUse"><stop stop-color="#00b4ff"/><stop offset="1" stop-color="#a100ff"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-pt="Apps Web" data-en="Web Apps" data-it="Web App">Apps Web</h3>
+          <p class="service-card__text" data-pt="Aplicações web interativas, painéis administrativos e ferramentas digitais sob medida para o seu negócio." data-en="Interactive web applications, admin dashboards and custom digital tools for your business." data-it="Applicazioni web interattive, pannelli amministrativi e strumenti digitali su misura per il vostro business.">Aplicações web interativas, painéis administrativos e ferramentas digitais sob medida para o seu negócio.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="24" cy="24" r="18" stroke="url(#g4)" stroke-width="2"/>
+              <path d="M24 6C24 6 16 14 16 24C16 34 24 42 24 42" stroke="url(#g4)" stroke-width="2"/>
+              <path d="M24 6C24 6 32 14 32 24C32 34 24 42 24 42" stroke="url(#g4)" stroke-width="2"/>
+              <path d="M6 24H42" stroke="url(#g4)" stroke-width="2"/>
+              <defs><linearGradient id="g4" x1="6" y1="6" x2="42" y2="42" gradientUnits="userSpaceOnUse"><stop stop-color="#00b4ff"/><stop offset="1" stop-color="#a100ff"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-pt="SEO & Performance" data-en="SEO & Performance" data-it="SEO & Performance">SEO & Performance</h3>
+          <p class="service-card__text" data-pt="Sites rápidos, bem posicionados e preparados para conquistar os primeiros lugares nas buscas." data-en="Fast, well-positioned sites prepared to conquer top search rankings." data-it="Siti veloci, ben posizionati e preparati per conquistare i primi posti nelle ricerche.">Sites rápidos, bem posicionados e preparados para conquistar os primeiros lugares nas buscas.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M10 34L24 10L38 34H10Z" stroke="url(#g5)" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="24" cy="22" r="4" stroke="url(#g5)" stroke-width="2"/>
+              <defs><linearGradient id="g5" x1="10" y1="10" x2="38" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#00b4ff"/><stop offset="1" stop-color="#a100ff"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-pt="Identidade Visual" data-en="Visual Identity" data-it="Identità Visiva">Identidade Visual</h3>
+          <p class="service-card__text" data-pt="Logotipos, paletas, tipografia e sistemas visuais que contam a história da sua marca com elegância." data-en="Logos, palettes, typography and visual systems that tell your brand's story with elegance." data-it="Loghi, palette, tipografia e sistemi visivi che raccontano la storia del vostro brand con eleganza.">Logotipos, paletas, tipografia e sistemas visuais que contam a história da sua marca com elegância.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M8 24C8 15.163 15.163 8 24 8" stroke="url(#g6)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M40 24C40 32.837 32.837 40 24 40" stroke="url(#g6)" stroke-width="2" stroke-linecap="round"/>
+              <path d="M20 8.5L8 8.5L8 20" stroke="url(#g6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M28 39.5L40 39.5L40 28" stroke="url(#g6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="g6" x1="8" y1="8" x2="40" y2="40" gradientUnits="userSpaceOnUse"><stop stop-color="#00b4ff"/><stop offset="1" stop-color="#a100ff"/></linearGradient></defs>
+            </svg>
+          </div>
+          <h3 class="service-card__title" data-pt="Manutenção & Suporte" data-en="Maintenance & Support" data-it="Manutenzione & Supporto">Manutenção & Suporte</h3>
+          <p class="service-card__text" data-pt="Seu site sempre no ar, atualizado e seguro. Suporte ágil para que você foque no que realmente importa." data-en="Your site always online, updated and secure. Agile support so you can focus on what really matters." data-it="Il vostro sito sempre online, aggiornato e sicuro. Supporto agile per concentrarsi su ciò che conta.">Seu site sempre no ar, atualizado e seguro. Suporte ágil para que você foque no que realmente importa.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ PORTFOLIO -->
+  <section class="section portfolio" id="portfolio">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label" data-pt="Trabalhos recentes" data-en="Recent work" data-it="Lavori recenti">Trabalhos recentes</span>
+        <h2 class="section__title" data-pt="Portfólio" data-en="Portfolio" data-it="Portfolio">Portfólio</h2>
+      </div>
+      <div class="portfolio__grid">
+
+        <a href="https://tnext.eu" target="_blank" rel="noopener" class="portfolio-card">
+          <div class="portfolio-card__image portfolio-card__image--tnext">
+            <div class="portfolio-card__overlay">
+              <span class="portfolio-card__visit" data-pt="Visitar site" data-en="Visit site" data-it="Visita il sito">Visitar site →</span>
+            </div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3>tnext.eu</h3>
+            <p data-pt="Site institucional — Europa" data-en="Institutional website — Europe" data-it="Sito istituzionale — Europa">Site institucional — Europa</p>
+          </div>
+        </a>
+
+        <a href="https://prarqdesign.com.br" target="_blank" rel="noopener" class="portfolio-card">
+          <div class="portfolio-card__image portfolio-card__image--prarq">
+            <div class="portfolio-card__overlay">
+              <span class="portfolio-card__visit" data-pt="Visitar site" data-en="Visit site" data-it="Visita il sito">Visitar site →</span>
+            </div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3>prarqdesign.com.br</h3>
+            <p data-pt="Escritório de arquitetura — Brasil" data-en="Architecture office — Brazil" data-it="Studio di architettura — Brasile">Escritório de arquitetura — Brasil</p>
+          </div>
+        </a>
+
+        <div class="portfolio-card portfolio-card--coming">
+          <div class="portfolio-card__image portfolio-card__image--next">
+            <div class="portfolio-card__overlay">
+              <span class="portfolio-card__visit" data-pt="Em breve" data-en="Coming soon" data-it="Prossimamente">Em breve…</span>
+            </div>
+          </div>
+          <div class="portfolio-card__info">
+            <h3 data-pt="O seu projeto" data-en="Your project" data-it="Il vostro progetto">O seu projeto</h3>
+            <p data-pt="Poderia ser aqui" data-en="Could be right here" data-it="Potrebbe essere qui">Poderia ser aqui</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ SOBRE -->
+  <section class="section about" id="sobre">
+    <div class="container about__inner">
+      <div class="about__visual">
+        <div class="about__wing-wrap">
+          <img src="assets/lvr-favicon.png" alt="LiVRe asa" class="about__wing" />
+          <div class="about__ring about__ring--1"></div>
+          <div class="about__ring about__ring--2"></div>
+          <div class="about__ring about__ring--3"></div>
+        </div>
+      </div>
+      <div class="about__text">
+        <span class="section__label" data-pt="Quem somos" data-en="About us" data-it="Chi siamo">Quem somos</span>
+        <h2 class="section__title" data-pt="Liberdade é o nosso código" data-en="Freedom is our code" data-it="La libertà è il nostro codice">Liberdade é o nosso código</h2>
+        <p data-pt="Na LiVRe, acreditamos que cada projeto merece voar. Nosso nome não é acidente: <em>libre</em>, livre — a filosofia que guia cada linha de código, cada escolha tipográfica, cada pixel posicionado com intenção." data-en="At LiVRe, we believe every project deserves to soar. Our name is no accident: <em>libre</em>, free — the philosophy that guides every line of code, every typographic choice, every pixel placed with intention." data-it="In LiVRe crediamo che ogni progetto meriti di volare. Il nostro nome non è un caso: <em>libre</em>, libero — la filosofia che guida ogni riga di codice, ogni scelta tipografica, ogni pixel posizionato con intenzione.">Na LiVRe, acreditamos que cada projeto merece voar. Nosso nome não é acidente: <em>libre</em>, livre — a filosofia que guia cada linha de código, cada escolha tipográfica, cada pixel posicionado com intenção.</p>
+        <p data-pt="Nascemos da soma de décadas de experiência e da ousadia de recomeçar. Trabalhamos entre o Brasil e a Itália, com olhar global e coração latino — conectando culturas, projetos e pessoas através do digital." data-en="Born from decades of experience and the audacity to start anew. We work between Brazil and Italy, with a global outlook and a Latin heart — connecting cultures, projects and people through the digital world." data-it="Nati dalla somma di decenni di esperienza e dall'audacia di ricominciare. Lavoriamo tra Brasile e Italia, con sguardo globale e cuore latino — collegando culture, progetti e persone attraverso il digitale.">Nascemos da soma de décadas de experiência e da ousadia de recomeçar. Trabalhamos entre o Brasil e a Itália, com olhar global e coração latino — conectando culturas, projetos e pessoas através do digital.</p>
+        <p data-pt="<strong>Damos asas ao seu projeto</strong> porque acreditamos que o digital não tem fronteiras — só horizontes." data-en="<strong>We give wings to your project</strong> because we believe the digital world has no borders — only horizons." data-it="<strong>Diamo ali al vostro progetto</strong> perché crediamo che il digitale non abbia confini — solo orizzonti."><strong>Damos asas ao seu projeto</strong> porque acreditamos que o digital não tem fronteiras — só horizontes.</p>
+        <div class="about__flags">
+          <span title="Brasil">🇧🇷 Brasil</span>
+          <span class="about__flag-sep">✦</span>
+          <span title="Italia">🇮🇹 Italia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ CONTATO -->
+  <section class="section contact" id="contato">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__label" data-pt="Fale conosco" data-en="Get in touch" data-it="Contattaci">Fale conosco</span>
+        <h2 class="section__title" data-pt="Vamos criar juntos?" data-en="Shall we create together?" data-it="Creiamo insieme?">Vamos criar juntos?</h2>
+        <p class="contact__intro" data-pt="Escolha o canal que preferir. Respondemos em português, inglês e italiano." data-en="Choose your preferred channel. We respond in Portuguese, English and Italian." data-it="Scegli il canale che preferisci. Rispondiamo in portoghese, inglese e italiano.">Escolha o canal que preferir. Respondemos em português, inglês e italiano.</p>
+      </div>
+      <div class="contact__cards">
+
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="contact-card contact-card--wa">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <h4>WhatsApp Brasil 🇧🇷</h4>
+            <span>+55 11 97164-0775</span>
+          </div>
+        </a>
+
+        <a href="https://wa.me/393500359910" target="_blank" rel="noopener" class="contact-card contact-card--wa">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <div>
+            <h4>WhatsApp Italia 🇮🇹</h4>
+            <span>+39 350 035-9910</span>
+          </div>
+        </a>
+
+        <a href="mailto:livrewebservices@gmail.com" class="contact-card contact-card--mail">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </div>
+          <div>
+            <h4>E-mail</h4>
+            <span>livrewebservices@gmail.com</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/livrewebstudium" target="_blank" rel="noopener" class="contact-card contact-card--ig">
+          <div class="contact-card__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </div>
+          <div>
+            <h4>Instagram</h4>
+            <span>@livrewebstudium</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__logo">
+        <img src="assets/lvr-logo-transparent.png" alt="LiVRe" />
+        <span class="footer__logo-sub">— Web Studium —</span>
+      </div>
+      <p class="footer__copy" data-pt="© 2025 LiVRe Web Studium. Feito com liberdade." data-en="© 2025 LiVRe Web Studium. Made with freedom." data-it="© 2025 LiVRe Web Studium. Fatto con libertà.">© 2025 LiVRe Web Studium. Feito com liberdade.</p>
+      <div class="footer__social">
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="social-icon social-icon--wa" title="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="mailto:livrewebservices@gmail.com" class="social-icon social-icon--mail" title="E-mail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        </a>
+        <a href="https://instagram.com/livrewebstudium" target="_blank" rel="noopener" class="social-icon social-icon--ig" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── MOBILE MENU ─────────────────────────────────────
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      toggle.classList.toggle('active');
+    });
+    navLinks.querySelectorAll('.nav__link').forEach(l => {
+      l.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('active');
+      });
+    });
+
+    // ─── HEADER SCROLL ───────────────────────────────────
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ─── LANGUAGE SWITCHER ───────────────────────────────
+    const langBtns = document.querySelectorAll('.lang-btn');
+    let currentLang = 'pt';
+
+    function applyLang(lang) {
+      currentLang = lang;
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang);
+      });
+      langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+    });
+
+    // ─── SCROLL REVEAL ───────────────────────────────────
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.service-card, .portfolio-card, .contact-card, .about__visual, .about__text').forEach(el => {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

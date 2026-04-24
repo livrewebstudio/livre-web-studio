@@ -210,6 +210,11 @@ strong { font-weight: 600; }
 }
 
 .social-icon {
+  gap: 6px;
+  flex-wrap: nowrap; /* impede ficar um em cima do outro */
+}
+
+.social-icon {
   display: flex;
   align-items: center;
   justify-content: center;

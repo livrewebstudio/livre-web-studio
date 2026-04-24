@@ -185,41 +185,34 @@ strong { font-weight: 600; }
 }
 
 /* Language */
+ESTA ASSIM
 .lang-switcher {
   display: flex;
   align-items: center;
-  gap: .2rem; /* menor que antes */
-  background: rgba(20, 20, 30, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  gap: .25rem;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.18);
   border-radius: 50px;
-  padding: .2rem .35rem; /* reduzido */
-  backdrop-filter: blur(6px);
+  padding: .25rem .4rem;
 }
-
 .lang-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: .15rem .3rem; /* menor = não cresce */
+  padding: .2rem .35rem;
   border-radius: 50px;
-  font-size: 0.85rem; /* menor que 1.1rem */
-  opacity: .7;
-  transition: all .25s ease;
+  font-size: 1.1rem;
+  opacity: .6;
+  transition: opacity .3s, background .3s;
   line-height: 1;
-  color: #ccc;
 }
-
 .lang-btn.active,
-.lang-btn:hover {
-  opacity: 1;
-  background: linear-gradient(135deg, #00c6ff, #7b2cff);
-  color: #fff;
-  box-shadow: 0 0 6px rgba(123, 44, 255, 0.5); /* glow mais contido */
+.lang-btn:hover { opacity: 1; background: rgba(255,255,255,.15);
 }
 
 .social-icon {
   display: flex;
-  align-items: right;
+  align-items: center;
   justify-content: center;
   width: 34px; height: 34px;
   border-radius: 50%;

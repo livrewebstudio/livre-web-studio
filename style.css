@@ -187,7 +187,6 @@ strong { font-weight: 600; }
 /* Language */
 .lang-switcher {
   display: flex;
-  flex-shrink: 0;
   align-items: center;
   gap: .25rem;
   background: rgba(255,255,255,.1);
@@ -207,14 +206,14 @@ strong { font-weight: 600; }
   line-height: 1;
 }
 .lang-btn.active,
-.lang-btn:hover { opacity: 1; background: rgba(255,255,255,.15);
-}
+.lang-btn:hover { opacity: 1; background: rgba(255,255,255,.15); }
 
-.social-icon {
-  gap: 6px;
-  flex-wrap: nowrap; /* impede ficar um em cima do outro */
+/* Social icons */
+.nav__social {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
-
 .social-icon {
   display: flex;
   align-items: center;

@@ -1,0 +1,50 @@
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: .2rem;
+
+  /* visual bonito (glass escuro premium) */
+  background: rgba(20, 20, 30, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+
+  /* compacto pra não quebrar header */
+  padding: .2rem .35rem;
+
+  backdrop-filter: blur(8px);
+
+  /* impede estourar layout */
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  /* tamanho seguro (não empurra ícones) */
+  padding: .2rem .35rem;
+  font-size: .9rem;
+
+  border-radius: 50px;
+
+  opacity: .7;
+  transition: all .25s ease;
+  line-height: 1;
+
+  color: #ccc;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+
+/* idioma ativo com estilo bonito (gradiente + glow leve) */
+.lang-btn.active {
+  opacity: 1;
+  background: linear-gradient(135deg, #00c6ff, #7b2cff);
+  color: #fff;
+  box-shadow: 0 0 8px rgba(123, 44, 255, 0.45);
+}

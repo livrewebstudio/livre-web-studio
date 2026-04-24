@@ -187,6 +187,7 @@ strong { font-weight: 600; }
 /* Language */
 .lang-switcher {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   gap: .25rem;
   background: rgba(255,255,255,.1);

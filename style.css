@@ -219,7 +219,7 @@ strong { font-weight: 600; }
 
 .social-icon {
   display: flex;
-  align-items: center;
+  align-items: right;
   justify-content: center;
   width: 34px; height: 34px;
   border-radius: 50%;

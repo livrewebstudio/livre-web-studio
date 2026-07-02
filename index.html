@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstroPhonia | A Sonic Mirror Journey</title>
+  <meta name="description" content="AstroPhonia offers original music composed at 432Hz — a frequency tuned to natural resonance. Sonic Mirror Journeys born from real human transitions." />
+  <link rel="canonical" href="https://astrophonia.com/" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://astrophonia.com/" />
+  <meta property="og:site_name" content="AstroPhonia" />
+  <meta property="og:title" content="AstroPhonia | A Sonic Mirror Journey" />
+  <meta property="og:description" content="Original music composed at 432Hz — Sonic Mirror Journeys born from real human transitions." />
+  <meta property="og:image" content="https://astrophonia.com/images/logo-transparent.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <meta property="og:locale:alternate" content="pt_BR" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AstroPhonia | A Sonic Mirror Journey" />
+  <meta name="twitter:description" content="Original music composed at 432Hz — Sonic Mirror Journeys born from real human transitions." />
+  <meta name="twitter:image" content="https://astrophonia.com/images/logo-transparent.png" />
+
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+
+  <!-- Fonts (self-hosted) -->
+  <link rel="stylesheet" href="fonts.css" />
+
+  <!-- Icons (self-hosted) -->
+  <link rel="stylesheet" href="vendor/fontawesome/all.min.css" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ── STARFIELD ── -->
+<canvas id="starfield"></canvas>
+<div class="bg-gradient"></div>
+
+<!-- ══════════════════════════════════════════
+     SPLASH SCREEN
+═══════════════════════════════════════════ -->
+<div id="splash">
+  <img src="images/logo-transparent.png" alt="AstroPhonia" class="splash-logo" />
+  <h1 class="splash-title">AstroPhonia</h1>
+  <p class="splash-subtitle" id="splash-sub">
+    Discover your inner cosmos through frequency and sound.
+  </p>
+  <p class="splash-lang-label" id="splash-lang-label">Choose your language</p>
+  <div class="splash-langs">
+    <button class="lang-btn" onclick="setLang('en')"><span class="lang-flag">🇬🇧</span> EN</button>
+    <button class="lang-btn" onclick="setLang('it')"><span class="lang-flag">🇮🇹</span> IT</button>
+    <button class="lang-btn" onclick="setLang('pt')"><span class="lang-flag">🇧🇷</span> PT</button>
+  </div>
+  <div class="splash-divider"></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SITE WRAPPER
+═══════════════════════════════════════════ -->
+<div id="site-wrapper" style="display:none">
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-logo">
+      <img src="images/logo-transparent.png" alt="AstroPhonia Logo" />
+      <span class="nav-logo-text">AstroPhonia</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#therapy" data-i18n="nav_therapy">The Method</a></li>
+      <li><a href="#audios" data-i18n="nav_audios">Sonic Journeys</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+    </ul>
+    <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="nav-socials">
+        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="nav-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="nav-social-icon" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.youtube.com/channel/UCsKqrba3DrU2EdjrIowiRIQ" target="_blank" rel="noopener" class="nav-social-icon" title="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="mailto:contato@astrophonia.com" class="nav-social-icon" title="Email"><i class="far fa-envelope"></i></a>
+      </div>
+      <div class="nav-lang">
+        <button class="nav-lang-btn" id="lang-toggle-btn" onclick="toggleLangDropdown()">
+          <span id="current-flag">🇬🇧</span>
+          <span id="current-lang-label">EN</span>
+          <i class="fas fa-chevron-down" style="font-size:0.5rem; margin-left:2px;"></i>
+        </button>
+        <div class="nav-lang-dropdown" id="lang-dropdown">
+          <button onclick="setLang('en')">🇬🇧 &nbsp; EN</button>
+          <button onclick="setLang('it')">🇮🇹 &nbsp; IT</button>
+          <button onclick="setLang('pt')">🇧🇷 &nbsp; PT</button>
+        </div>
+      </div>
+      <button class="nav-hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <nav class="nav-mobile" id="mobile-nav">
+    <a href="#therapy" data-i18n="nav_therapy" onclick="closeMobileNav()">The Method</a>
+    <a href="#audios" data-i18n="nav_audios" onclick="closeMobileNav()">Sonic Journeys</a>
+    <a href="#contact" data-i18n="nav_contact" onclick="closeMobileNav()">Contact</a>
+    <div class="nav-mobile-socials">
+      <a href="https://instagram.com/astrophonia" target="_blank" class="nav-social-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5511971640775" target="_blank" class="nav-social-icon"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.youtube.com/channel/UCsKqrba3DrU2EdjrIowiRIQ" target="_blank" class="nav-social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="mailto:contato@astrophonia.com" class="nav-social-icon"><i class="far fa-envelope"></i></a>
+    </div>
+    <div style="display:flex;gap:0.8rem;margin-top:0.5rem;">
+      <button class="lang-btn" style="padding:0.4rem 0.8rem;font-size:0.6rem;" onclick="setLang('en');closeMobileNav()">🇬🇧 EN</button>
+      <button class="lang-btn" style="padding:0.4rem 0.8rem;font-size:0.6rem;" onclick="setLang('it');closeMobileNav()">🇮🇹 IT</button>
+      <button class="lang-btn" style="padding:0.4rem 0.8rem;font-size:0.6rem;" onclick="setLang('pt');closeMobileNav()">🇧🇷 PT</button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════════ -->
+  <section id="hero">
+    <img src="images/logo-transparent.png" alt="AstroPhonia" class="hero-logo reveal" />
+    <h1 class="hero-brand reveal reveal-delay-1">AstroPhonia</h1>
+    <p class="hero-tagline reveal reveal-delay-2" data-i18n="hero_tagline">
+      AstroPhonia — where natural frequency meets real lived experiences.
+      Find your sonic journey: the sound mirror of your own story.
+    </p>
+    <div class="hero-scroll reveal reveal-delay-3">
+      <span data-i18n="hero_scroll">Explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       THE METHOD
+  ═══════════════════════════════════════════ -->
+  <section id="therapy">
+    <div class="section-divider reveal"></div>
+    <div class="therapy-inner">
+      <p class="section-eyebrow reveal" data-i18n="therapy_eyebrow">The Method</p>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="therapy_title">Sonic Mirror Journey</h2>
+      <div class="gold-line reveal reveal-delay-1"></div>
+      <p class="section-text reveal reveal-delay-2" data-i18n="therapy_text">
+        All AstroPhonia compositions are tuned to 432Hz — a pitch standard where the A note resonates at 432 vibrations per second, slightly below the modern concert tuning of 440Hz. Used by composers across the centuries, it is often described as warmer and more grounded. Each piece is composed live on a Roland Juno-Gi and born from a real human transition: loss, solitude, displacement, beginning again. Nothing was invented. Everything was lived.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       EXPERIENCE
+  ═══════════════════════════════════════════ -->
+  <section id="experience">
+    <div class="experience-inner reveal">
+      <img src="images/logo-transparent.png" alt="AstroPhonia" class="experience-logo-mini" />
+      <p class="experience-label" data-i18n="experience_label">AstroPhonia</p>
+      <p class="section-eyebrow" data-i18n="experience_eyebrow">How It Works</p>
+      <h2 class="section-title" data-i18n="experience_title">The Journey</h2>
+      <div class="gold-line"></div>
+      <p class="section-text" data-i18n="experience_text">
+        The Sonic Mirror is the idea that music, when composed from lived experience, can reflect something back to the listener — not as an answer, but as a companion. I translate my own transitions into sound at 432Hz so that the vibration carries the weight of what was real. You bring your own story. The music meets you there. What happens in that encounter belongs entirely to you.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SONIC JOURNEYS
+  ═══════════════════════════════════════════ -->
+  <section id="audios">
+    <div class="audios-inner">
+      <div class="audios-header">
+        <p class="section-eyebrow reveal" data-i18n="audios_eyebrow">Listen &amp; Explore</p>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="audios_title">Sonic Journeys</h2>
+        <div class="gold-line reveal reveal-delay-1"></div>
+        <h3 style="font-family:var(--font-heading);font-size:1.3rem;color:var(--text);font-weight:300;margin-bottom:1rem;" class="reveal reveal-delay-2" data-i18n="audios_library_title">The Journey Collection</h3>
+        <p class="audios-description reveal reveal-delay-2" data-i18n="audios_description">
+          Each piece below is a Sonic Mirror Journey — original music composed at 432Hz, shaped by a specific human experience. Choose the one that resonates with where you are. Listen to the story behind the sound, feel the frequency, and let the music accompany your own moment.
+        </p>
+      </div>
+
+      <!-- ── Cards Grid ── -->
+      <div class="cards-grid">
+
+        <!-- ═══════════════════════════════════
+             CARD 1 — Beyond the Silence
+        ════════════════════════════════════ -->
+        <div class="audio-card reveal">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="Beyond the Silence" />
+          </div>
+          <span class="card-tag">432Hz · <span data-i18n="card1_freq_label">Loss &amp; Grief</span></span>
+          <h3 class="card-title" data-i18n="card1_title">Beyond the Silence</h3>
+          <p class="card-text" data-i18n="card1_text">
+            I lost my partner during Covid, at 38, in total solitude — unable to grieve alongside anyone. I had to find my own floor when everything collapsed. This composition was born in that silence. It carries the weight of what was lost and the quiet of what came after. A sonic companion for those navigating their own grief, at their own pace.
+          </p>
+          <div class="card-actions">
+            <p class="card-listen-label" data-i18n="card_listen_free">Listen for free</p>
+            <div class="card-platforms">
+              <a href="https://open.spotify.com/album/5FNEF9HAmEMAfG2KymdFMY?si=WXOzsx6xSkku15KTeug1tA" target="_blank" rel="noopener" class="btn-platform" data-platform="spotify" title="Spotify">
+                <i class="fab fa-spotify"></i><span>Spotify</span>
+              </a>
+              <a href="https://www.youtube.com/channel/UCsKqrba3DrU2EdjrIowiRIQ" target="_blank" rel="noopener" class="btn-platform" data-platform="youtube" title="YouTube">
+                <i class="fab fa-youtube"></i><span>YouTube</span>
+              </a>
+              <a href="https://music.amazon.it/albums/B0H3H9YGP4?trackAsin=B0H3HBP7GN" target="_blank" rel="noopener" class="btn-platform" data-platform="amazon" title="Amazon Music">
+                <i class="fab fa-amazon"></i><span>Amazon</span>
+              </a>
+              <a href="https://astrophonia.bandcamp.com/track/beyond-the-silence-432hz" target="_blank" rel="noopener" class="btn-platform" data-platform="bandcamp" title="Bandcamp">
+                <i class="fab fa-bandcamp"></i><span>Bandcamp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════
+             CARD 2 — The Uncharted Self
+        ════════════════════════════════════ -->
+        <div class="audio-card reveal reveal-delay-1">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="The Uncharted Self" />
+          </div>
+          <span class="card-tag">432Hz · <span data-i18n="card2_freq_label">Starting Over</span></span>
+          <h3 class="card-title" data-i18n="card2_title">The Uncharted Self</h3>
+          <p class="card-text" data-i18n="card2_text">
+            I left my country carrying only what I could hold inside me. This composition was born between two worlds — in the space where what you left still echoes and what lies ahead has no map yet. A sonic mirror for those in the middle of a crossing: neither here nor there, but moving.
+          </p>
+          <div class="card-actions">
+            <p class="card-listen-label" data-i18n="card_listen_free">Listen for free</p>
+            <div class="card-platforms">
+              <a href="https://open.spotify.com/album/5FNEF9HAmEMAfG2KymdFMY?si=WXOzsx6xSkku15KTeug1tA" target="_blank" rel="noopener" class="btn-platform" data-platform="spotify" title="Spotify">
+                <i class="fab fa-spotify"></i><span>Spotify</span>
+              </a>
+              <a href="https://www.youtube.com/channel/UCsKqrba3DrU2EdjrIowiRIQ" target="_blank" rel="noopener" class="btn-platform" data-platform="youtube" title="YouTube">
+                <i class="fab fa-youtube"></i><span>YouTube</span>
+              </a>
+              <a href="https://music.amazon.it/albums/B0H3H9YGP4?trackAsin=B0H3HBP7GN" target="_blank" rel="noopener" class="btn-platform" data-platform="amazon" title="Amazon Music">
+                <i class="fab fa-amazon"></i><span>Amazon</span>
+              </a>
+              <a href="https://astrophonia.bandcamp.com/track/the-uncharted-self-432hz" target="_blank" rel="noopener" class="btn-platform" data-platform="bandcamp" title="Bandcamp">
+                <i class="fab fa-bandcamp"></i><span>Bandcamp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════
+             CARD 3 — Love Across The Ocean
+        ════════════════════════════════════ -->
+        <div class="audio-card reveal reveal-delay-2">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="Love Across The Ocean" />
+          </div>
+          <span class="card-tag">432Hz · <span data-i18n="card3_freq_label">Finding Real Love</span></span>
+          <h3 class="card-title" data-i18n="card3_title">Love Across The Ocean</h3>
+          <p class="card-text" data-i18n="card3_text">
+            Love doesn't ask for permission or timing. This song was born from an unexpected moment — a stranger on a bus, a casual conversation, a name I almost forgot. Love found me at 49, across an ocean I hadn't planned to cross. Not because I was looking. Because it was simply meant to happen. For everyone who stopped believing — it might already be on its way.
+          </p>
+          <div class="card-actions">
+            <p class="card-listen-label" data-i18n="card_listen_free">Listen for free</p>
+            <div class="card-platforms">
+              <a href="https://open.spotify.com/album/5FNEF9HAmEMAfG2KymdFMY?si=WXOzsx6xSkku15KTeug1tA" target="_blank" rel="noopener" class="btn-platform" data-platform="spotify" title="Spotify">
+                <i class="fab fa-spotify"></i><span>Spotify</span>
+              </a>
+              <a href="https://www.youtube.com/channel/UCsKqrba3DrU2EdjrIowiRIQ" target="_blank" rel="noopener" class="btn-platform" data-platform="youtube" title="YouTube">
+                <i class="fab fa-youtube"></i><span>YouTube</span>
+              </a>
+              <a href="https://music.amazon.it/albums/B0H3H9YGP4?trackAsin=B0H3HBP7GN" target="_blank" rel="noopener" class="btn-platform" data-platform="amazon" title="Amazon Music">
+                <i class="fab fa-amazon"></i><span>Amazon</span>
+              </a>
+              <a href="https://astrophonia.bandcamp.com/track/love-across-the-ocean-432hz" target="_blank" rel="noopener" class="btn-platform" data-platform="bandcamp" title="Bandcamp">
+                <i class="fab fa-bandcamp"></i><span>Bandcamp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══════════════════════════════════
+             CARD 4 — Exiety
+        ════════════════════════════════════ -->
+        <div class="audio-card reveal reveal-delay-3">
+          <div class="card-icon-wrap">
+            <img src="images/logo-transparent.png" alt="Exiety" />
+          </div>
+          <span class="card-tag">432Hz · <span data-i18n="card4_freq_label">Sound Relief</span></span>
+          <h3 class="card-title" data-i18n="card4_title">Exiety</h3>
+          <p class="card-text" data-i18n="card4_text">
+            The mind can sometimes become a noisy labyrinth, a place where the chest tightens and the pace quickens. This song was born from the search for a breathing space — an escape point between the exit and anxiety. «Exiety» is not a promise of eternal calm; it is simply an alternative to the chaos. A 432Hz space for decompression. For anyone who needs to slow the world down for a few minutes — the exit might just be in the sound.
+          </p>
+          <div class="card-actions">
+            <p class="card-listen-label" data-i18n="card_listen_free">Listen for free</p>
+            <div class="card-platforms">
+              <a href="https://open.spotify.com/album/5FNEF9HAmEMAfG2KymdFMY?si=WXOzsx6xSkku15KTeug1tA" target="_blank" rel="noopener" class="btn-platform" data-platform="spotify" title="Spotify">
+                <i class="fab fa-spotify"></i><span>Spotify</span>
+              </a>
+              <a href="https://www.youtube.com/channel/UCsKqrba3DrU2EdjrIowiRIQ" target="_blank" rel="noopener" class="btn-platform" data-platform="youtube" title="YouTube">
+                <i class="fab fa-youtube"></i><span>YouTube</span>
+              </a>
+              <a href="https://music.amazon.it/albums/B0H3H9YGP4?trackAsin=B0H3HBP7GN" target="_blank" rel="noopener" class="btn-platform" data-platform="amazon" title="Amazon Music">
+                <i class="fab fa-amazon"></i><span>Amazon</span>
+              </a>
+              <a href="https://astrophonia.bandcamp.com/track/exiety-432hz" target="_blank" rel="noopener" class="btn-platform" data-platform="bandcamp" title="Bandcamp">
+                <i class="fab fa-bandcamp"></i><span>Bandcamp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cards-grid -->
+
+      <!-- 432Hz context block -->
+      <div class="freq-suggestion reveal" style="margin-top:3rem;">
+        <h3 data-i18n="freq_suggestion_title">432Hz</h3>
+        <p class="freq-suggestion-text" data-i18n="freq_suggestion_text">
+          Before 440Hz became the modern standard, orchestras often tuned lower. AstroPhonia simply returns there — to a warmer, quieter place in sound. What you feel when you listen belongs to you.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="section-divider reveal"></div>
+    <div class="contact-inner">
+      <p class="section-eyebrow reveal" data-i18n="contact_eyebrow">Reach Out</p>
+      <h2 class="section-title reveal reveal-delay-1" data-i18n="contact_title">Contact</h2>
+      <div class="gold-line reveal reveal-delay-1"></div>
+      <p class="audios-description reveal reveal-delay-2" data-i18n="contact_text">
+        Feel free to reach out. Whether you have questions about the journeys, want to use them in your practice, or simply want to share your experience — I am here.
+      </p>
+      <div class="contact-links reveal reveal-delay-2">
+        <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="contact-link">
+          <i class="fab fa-whatsapp"></i><span>+55 11 97164-0775</span>
+        </a>
+        <a href="mailto:contato@astrophonia.com" class="contact-link">
+          <i class="far fa-envelope"></i><span>contato@astrophonia.com</span>
+        </a>
+        <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="contact-link">
+          <i class="fab fa-instagram"></i><span>@astrophonia</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo-transparent.png" alt="AstroPhonia" />
+        <span class="footer-brand-text">AstroPhonia</span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy.html" class="footer-link" data-i18n="footer_privacy">Privacy Policy</a>
+        <a href="cookies.html" class="footer-link" data-i18n="footer_cookies">Cookie Policy</a>
+        <a href="#contact" class="footer-link" data-i18n="nav_contact">Contact</a>
+        <span class="footer-link" style="cursor:default; margin-top:0.5rem;">© 2026 AstroPhonia</span>
+      </div>
+      <div class="footer-credit">
+        <p class="footer-credit-text">
+          <span data-i18n="footer_dev">Website developed by</span><br />
+          <a href="http://livrewebstudio.github.io/livre-web-studio/" target="_blank" rel="noopener">LiVRe Web Studium</a>
+        </p>
+        <div class="footer-socials">
+          <a href="https://instagram.com/astrophonia" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/5511971640775" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:contato@astrophonia.com" class="footer-social"><i class="far fa-envelope"></i></a>
+          <a href="https://www.youtube.com/channel/UCsKqrba3DrU2EdjrIowiRIQ" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-youtube"></i></a>
+          <a href="https://astrophonia.bandcamp.com" target="_blank" rel="noopener" class="footer-social"><i class="fab fa-bandcamp"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /site-wrapper -->
+
+<!-- ══════════════════════════════════════════
+     COOKIE BANNER
+═══════════════════════════════════════════ -->
+<div id="cookie-banner">
+  <p class="cookie-text" id="cookie-text" data-i18n="cookie_text">
+    This site uses essential cookies to ensure proper functionality. No personal data is collected or stored. By continuing, you agree to our <a href="cookies.html" data-i18n="footer_cookies">Cookie Policy</a>.
+  </p>
+  <div class="cookie-actions">
+    <a href="cookies.html" class="btn-cookie-more" data-i18n="cookie_more">Learn more</a>
+    <button class="btn-cookie-accept" onclick="acceptCookies()" data-i18n="cookie_accept">Accept</button>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
